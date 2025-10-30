@@ -6,15 +6,16 @@ const logos = [
   { name: "Spring", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
   { name: "Java", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
   { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "Express.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+  { name: "Express.js", src: "https://expressjs.com/images/brand/logo-dark.svg" },
   { name: "MongoDB", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
   { name: "MySQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
   { name: "Git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
   { name: "Docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+  { name: "Astro", src: "https://astro.build/assets/press/astro-icon-light.svg" },
 ];
 ---
 
-<section class="content ">
+
   <div class="container">
     <div class="carousel-wrapper">
       <div class="carousel-track">
@@ -27,21 +28,23 @@ const logos = [
       </div>
     </div>
   </div>
-</section>
+
 
 <style>
-.container {}
+.container {
+  
+}
 
 .carousel-wrapper {
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: auto;
 }
 
 .carousel-track {
   display: flex;
   gap: 3rem;
-  animation: scroll 30s linear infinite;
+  animation: scroll 5s linear infinite;
 }
 
 .carousel-item {
@@ -69,7 +72,7 @@ const logos = [
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-120%);
+    transform: translateX(-150%);
   }
 }
 </style>
