@@ -10,27 +10,31 @@ import Contact from "./Contact.astro";
     <section id="hero">
       <Hero />
     </section>
+
     <section id="about">
       <About />
     </section>
-    <section id="projects">
-      <Projects/>
-    </sections>
+
+    <section id="projects" class="shallFlex">
+      <Projects />
+    </section>
+
     <section id="contact">
-      <Contact/>
+      <Contact />
     </section>
   </main>
 </div>
 
 <style>
   #container {
-    font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-      Arial, sans-serif;
-    height: 100%;
+    font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
   }
 
   main {
-    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
@@ -41,8 +45,6 @@ import Contact from "./Contact.astro";
     flex-direction: column;
     padding: 16px;
   }
-
- 
 
   @media screen and (max-height: 368px) {
     #news {

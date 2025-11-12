@@ -49,16 +49,17 @@ const logos = [
     name: 'Astro',
     src: 'https://astro.build/assets/press/astro-icon-light.svg',
   },
+  {
+    name: 'Axios',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Axios_logo_%282020%29.svg',
+  },
 ];
 
-export default function Carousel({
-  speed = 100 /* px/s, ajustar si quieres más rápido/lento */,
-}) {
+export default function Carousel({ speed = 100 }) {
   const trackRef = useRef(null);
-  const styleIdRef = useRef(null); // id para la regla dinámica
+  const styleIdRef = useRef(null);
   const resizeObsRef = useRef(null);
 
-  // helper: espera a que todas las imágenes del track estén cargadas (o fallen)
   const waitImagesLoaded = container => {
     if (!container) return Promise.resolve();
     const imgs = Array.from(container.querySelectorAll('img'));
@@ -79,7 +80,6 @@ export default function Carousel({
     const track = trackRef.current;
     if (!track) return;
 
-    // create unique style element
     const styleEl = document.createElement('style');
     const uniqueId = `carousel-dyn-${Math.random().toString(36).slice(2, 9)}`;
     styleEl.id = uniqueId;
@@ -91,9 +91,9 @@ export default function Carousel({
     const recalc = async () => {
       await waitImagesLoaded(track);
       const fullWidth = track.scrollWidth;
-      const distance = fullWidth / 3;
+      const distance = fullWidth / 2;
 
-      const duration = Math.max(4, distance / speed); // mínimo 4s para que no sea demasiado rápido
+      const duration = Math.max(4, distance / speed);
 
       styleEl.innerHTML = `
         @keyframes ${uniqueId}-scroll {
@@ -162,11 +162,15 @@ export default function Carousel({
       </div>
 
       <style>{`
-        .carousel-wrapper { overflow: hidden; width: 100%; }
+        .carousel-wrapper { overflow: hidden; width: 100%; clip-path: inset(0px 300px 0px 300px); }
         .carousel-track { display: flex; gap: 3rem; width: max-content; align-items: center; }
         .carousel-item { flex: 0 0 auto; text-align: center; }
         .carousel-item img { width: 64px; height: 64px; object-fit: contain; transition: transform 0.3s; display: block; }
         .carousel-item span { display: block; margin-top: 0.5rem; font-size: 0.9rem; color: white; font-weight: 500; user-select: none; }
+      
+        @media (max-width: 768px) {
+          .carousel-wrapper { clip-path: inset(0px 100px 0px 100px); }
+        }
       `}</style>
     </div>
   );

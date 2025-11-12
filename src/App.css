@@ -1,3 +1,88 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+.profile-img {
+  border-radius: 50%;
+  object-fit: none;
+  object-position: -309px -166px;
+}
+
+/* big portable devices */
+@media (max-width: 1025px) {
+  body::after {
+    content: '>1025';
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: purple;
+    color: white;
+  }
+
+  .profile-img {
+    object-position: -350px -185px;
+    zoom: 0.8;
+  }
+
+  .image-figure {
+    width: 110%;
+  }
+}
+
+/* tablet devices */
+@media (max-width: 1024px) {
+  body::after {
+    content: '≤1025';
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: red;
+    color: white;
+  }
+
+  .profile-img {
+    object-position: -375px -185px;
+    zoom: 0.8;
+  }
+
+  .image-figure {
+    width: 120%;
+  }
+}
+
+/* phablet devices */
+@media (max-width: 820px) {
+  body::after {
+    content: '≤860';
+    background: orange;
+  }
+  .profile-img {
+    object-position: -305px -195px;
+    zoom: 1.1;
+  }
+
+  .image-figure {
+    width: 60%;
+  }
+}
+
+/* phone devices */
+@media (max-width: 768px) {
+  body::after {
+    content: '≤768';
+    background: green;
+  }
+
+  .profile-img {
+    object-position: -330px -195px;
+  }
+
+  .image-figure {
+    width: 100%;
+  }
+
+  .shallFlex {
+    display: flex;
+    flex-direction: row;
+  }
 }
