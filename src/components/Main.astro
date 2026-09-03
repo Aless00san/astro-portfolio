@@ -1,19 +1,24 @@
 ---
 import About from "./About.astro";
 import Hero from "./Hero.astro";
+import Experience from "./Experience.astro";
 import Projects from "./Projects.astro";
 import Contact from "./Contact.astro";
 ---
 
 <div id="container">
   <main>
-    <section id="hero">
-      <Hero />
-    </section>
+    <div class="intro-band">
+      <section id="hero">
+        <Hero />
+      </section>
 
-    <section id="about">
-      <About />
-    </section>
+      <section id="about">
+        <About />
+      </section>
+    </div>
+
+    <Experience />
 
     <section id="projects" class="shallFlex">
       <Projects />
@@ -27,8 +32,7 @@ import Contact from "./Contact.astro";
 
 <style>
   #container {
-    font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
-    flex: 1; 
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
@@ -39,47 +43,48 @@ import Contact from "./Contact.astro";
     flex-direction: column;
   }
 
+  .intro-band {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg);
+  }
+
+  /* Dotted background pattern */
+  .intro-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(156, 163, 245, 0.5) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+    opacity: 0.25;
+  }
+
+  .intro-band #hero,
+  .intro-band #about {
+    position: relative;
+    z-index: 1;
+  }
+
   #hero {
     display: flex;
     align-items: start;
     flex-direction: column;
-    padding: 16px;
-  }
-
-  @media screen and (max-height: 368px) {
-    #news {
-      display: none;
-    }
+    padding: 4rem 1rem 3rem;
   }
 
   @media screen and (max-width: 768px) {
-    #container {
-      display: flex;
-      flex-direction: column;
-    }
-
     #hero {
       display: block;
-      padding-top: 10%;
+      padding-top: 2.5rem;
     }
 
-    #links {
-      flex-wrap: wrap;
-    }
-
-    #links a.button {
-      padding: 14px 18px;
-    }
-
-    #news {
-      right: 16px;
-      left: 16px;
-      bottom: 2.5rem;
-      max-width: 100%;
-    }
-
-    h1 {
-      line-height: 1.5;
+    #hero .title {
+      line-height: 1.4;
     }
   }
 </style>

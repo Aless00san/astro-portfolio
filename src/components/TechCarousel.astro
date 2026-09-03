@@ -1,0 +1,152 @@
+---
+const logos = [
+  {
+    name: "JavaScript",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "Python",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    name: "React",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Vue.js",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+  },
+  {
+    name: "Spring",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  },
+  {
+    name: "Java",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  },
+  {
+    name: "Node.js",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express.js",
+    src: "https://expressjs.com/images/logos/logo-dark.svg",
+  },
+  {
+    name: "MongoDB",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    name: "MySQL",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
+  {
+    name: "Git",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "Docker",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  },
+  {
+    name: "Astro",
+    src: "https://astro.build/assets/press/astro-icon-light.svg",
+  },
+  {
+    name: "Hugo",
+    src: "https://gohugo.io/images/hugo-logo-wide.svg",
+  },
+];
+
+const groups = 4;
+---
+
+<div class="carousel" role="region" aria-label="Technologies">
+  <div class="carousel-track">
+    {Array.from({ length: groups }, (_, i) => (
+      <ul
+        class="carousel-group"
+        aria-hidden={i === 0 ? undefined : "true"}
+      >
+        {logos.map((tech) => (
+          <li class="carousel-item">
+            <img src={tech.src} alt={i === 0 ? tech.name : ""} />
+            <span>{tech.name}</span>
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</div>
+
+<style>
+  :root {
+    --carousel-duration: 20s;
+  }
+
+  .carousel {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll var(--carousel-duration) linear infinite;
+  }
+
+  .carousel-group {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .carousel-item img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  .carousel-item span {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translateX(-25%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+      animation: none;
+    }
+  }
+
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+</style>

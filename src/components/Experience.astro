@@ -1,0 +1,221 @@
+---
+interface Role {
+  role: string;
+  company: string;
+  period: string;
+  location?: string;
+  highlights: string[];
+  tech: string[];
+}
+
+const experience: Role[] = [
+   {
+    role: "Full Stack Developer",
+    company: "Freelance",
+    period: "2025 — Ongoing",
+    highlights: [
+      "Development of web and desktop applications for clients using Java, JavaScript, and TypeScript.",
+      "Creation of REST APIs and backend services with Spring Boot and Node.js.",
+      "Implementation of responsive and accessible user interfaces with React",
+      "Collaboration with clients to gather requirements and deliver high-quality software solutions.",
+    ],
+    tech: ["JavaScript", "Spring Boot","TypeScript", "React", "Jest", "Node.js", "Express.js", "Java 21", "Postman", "Git"],
+  },
+  {
+    role: "Junior Backend Developer",
+    company: "Decide Soluciones",
+    period: "2024 — 2025",
+    location: "Remote",
+    highlights: [
+      "Creation and maintenance of business rules with Java. ",
+      "Maintenance of technical documentation for various projects",
+      "Creation of test suites in Excel, SOAP and REST APIs.",
+    ],
+    tech: ["Java 18/21", "Junit", "Soap", "Postman", "Git", "Plastic SCM", "Jira", 'ODM'],
+  },
+  {
+    role: "Junior Programmer (Trainee)",
+    company: "NTT Data",
+    period: "2022 — 2023",
+    location: "Barcelona",
+    highlights: [
+      "Code revision and refactoring of Java code to improve maintainability and performance and fix bugs.",
+      "Maintenance and management of SQL Server databases.",
+      "Creation of small terminal apps for service automation.",
+      "Revision of documentation."
+    ],
+    tech: ["Java 8+", "Spring Boot 6+", "SQL Server", "Git", "Subversion"],
+  },
+];
+---
+
+<section class="section experience" id="experience">
+  <div class="container">
+    <h2 class="title is-2 section-title">Experience</h2>
+    <p class="subtitle section-subtitle">
+      A look at my professional journey and the tools I've worked with.
+    </p>
+
+    <ol class="timeline">
+      {experience.map((job) => (
+        <li class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <article class="timeline-card">
+            <header class="timeline-header">
+              <div>
+                <h3 class="title is-5">{job.role}</h3>
+                <p class="timeline-company">
+                  {job.company}
+                  {job.location && <span class="timeline-location"> · {job.location}</span>}
+                </p>
+              </div>
+              <span class="badge is-period">{job.period}</span>
+            </header>
+            <ul class="timeline-highlights">
+              {job.highlights.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+            <div class="tags">
+              {job.tech.map((tech) => (
+                <span class="tag is-tech">{tech}</span>
+              ))}
+            </div>
+          </article>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .experience {
+    background-color: var(--bg-elevated);
+  }
+
+  .section-title {
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+  }
+
+  .timeline {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 1.4rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 3.25rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: calc(1.4rem - 0.45rem);
+    top: 0.6rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--primary);
+    box-sizing: content-box;
+  }
+
+  .timeline-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition),
+      border-color var(--transition);
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+  }
+
+  .timeline-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-company {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .timeline-location {
+    color: var(--text-muted);
+  }
+
+  .badge.is-period {
+    background: var(--primary-grad);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .timeline-highlights {
+    margin: 0 0 1rem;
+    padding: 0;
+    padding-left: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    color: var(--text);
+  }
+
+  .timeline-highlights li::marker {
+    color: var(--primary);
+  }
+
+  .tag.is-tech {
+    background-color: rgba(99, 102, 241, 0.12);
+    color: var(--primary-hover);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: 999px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 1.05rem;
+    }
+    .timeline-item {
+      padding-left: 2.75rem;
+    }
+    .timeline-marker {
+      left: calc(1.05rem - 0.45rem);
+    }
+  }
+</style>

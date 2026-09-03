@@ -1,17 +1,94 @@
+---
+---
 <div class="container">
   <div class="columns is-vcentered">
     <div class="column">
-      <h1 class="title">Alessandro Santaniello</h1>
-      <p class="subtitle">Full-stack Developer</p>
+      <p class="badge is-hero">Full-stack Developer</p>
+      <h1 class="title hero-title">Alex Santaniello</h1>
+      <p class="hero-tagline">
+        I build modern, performant applications with an emphasis on clean
+        architecture, developer experience, and fast, user-friendly interfaces.
+      </p>
+      <div class="hero-actions">
+        <a class="button is-primary" href="#projects">View Projects</a>
+        <a class="button is-ghost" href="#contact">Get in touch</a>
+      </div>
     </div>
   </div>
-  <p class="is-size-5 mb-5"> I specialize in building modern applications with JavaScript and Java. My main focus is to build highly optimized experiences for my Users<p>
-   <div class="buttons">
-        <a href="#projects" class="button is-large is-light">
-          View My Work
-        </a>
-        <a href="#contact" class="button is-large is-outlined is-light">
-          Get In Touch
-        </a>
-      </div>
 </div>
+
+<style>
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0.75rem 0 1rem;
+    background: linear-gradient(135deg, #e8eaf0 30%, var(--primary-hover));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--text);
+  }
+
+  .badge.is-hero {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.14);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    color: var(--primary-hover);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    color: var(--text);
+    max-width: 46ch;
+    margin: 0 0 0.75rem;
+  }
+
+  .hero-sub {
+    color: var(--text-muted);
+    max-width: 60ch;
+    margin: 0 0 1.75rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .button.is-primary {
+    background: var(--primary-grad);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .button.is-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: #fff;
+  }
+
+  .button.is-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: border-color var(--transition), color var(--transition);
+  }
+
+  .button.is-ghost:hover {
+    border-color: var(--primary);
+    color: var(--primary-hover);
+  }
+</style>

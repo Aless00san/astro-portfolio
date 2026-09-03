@@ -1,88 +1,59 @@
+:root {
+  --bg: #0f1115;
+  --bg-elevated: #161922;
+  --surface: #1c202b;
+  --surface-hover: #232838;
+  --border: #2a3040;
+  --text: #e8eaf0;
+  --text-muted: #9aa3b5;
+  --primary: #6366f1;
+  --primary-hover: #818cf8;
+  --primary-grad: linear-gradient(135deg, #6366f1, #a855f7);
+  --accent: #22d3ee;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --radius: 0.875rem;
+  --radius-lg: 1.25rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 1rem 2.5rem rgba(0, 0, 0, 0.45);
+  --transition: 0.2s ease;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-.profile-img {
-  border-radius: 50%;
-  object-fit: none;
-  object-position: -309px -166px;
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
+  line-height: 1.6;
 }
 
-/* big portable devices */
-@media (max-width: 1025px) {
-  body::after {
-    content: '>1025';
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: purple;
-    color: white;
-  }
-
-  .profile-img {
-    object-position: -350px -185px;
-    zoom: 0.8;
-  }
-
-  .image-figure {
-    width: 110%;
-  }
+h1,
+h2,
+h3,
+.title,
+.subtitle {
+  color: var(--text);
 }
 
-/* tablet devices */
-@media (max-width: 1024px) {
-  body::after {
-    content: '≤1025';
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: red;
-    color: white;
-  }
-
-  .profile-img {
-    object-position: -375px -185px;
-    zoom: 0.8;
-  }
-
-  .image-figure {
-    width: 120%;
-  }
+a {
+  color: var(--primary-hover);
+  transition: color var(--transition);
 }
 
-/* phablet devices */
-@media (max-width: 820px) {
-  body::after {
-    content: '≤860';
-    background: orange;
-  }
-  .profile-img {
-    object-position: -305px -195px;
-    zoom: 1.1;
-  }
-
-  .image-figure {
-    width: 60%;
-  }
+a:hover {
+  color: var(--primary);
 }
 
-/* phone devices */
-@media (max-width: 768px) {
-  body::after {
-    content: '≤768';
-    background: green;
-  }
+.section {
+  padding: 4.5rem 1rem;
+}
 
-  .profile-img {
-    object-position: -330px -195px;
-  }
-
-  .image-figure {
-    width: 100%;
-  }
-
-  .shallFlex {
-    display: flex;
-    flex-direction: row;
-  }
+.container {
+  max-width: 72rem;
 }

@@ -1,5 +1,5 @@
 ---
-import '../App.css'
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="section projects">
@@ -14,7 +14,7 @@ import '../App.css'
               <figure class="image is-4by3">
                 <img
                   class="project-image"
-                  src="/images/GunplaDB.png"
+                  src={base + "images/GunplaDB.png"}
                   alt="Project 1 Screenshot"
                 />
               </figure>
@@ -44,11 +44,11 @@ import '../App.css'
             <figure class="image is-4by3">
               <img
                 class="project-image"
-                src="/images/helldive.gg.png"
+                src={base + "images/helldive.gg.png"}
                 alt="Project 2 Screenshot"
               />
             </figure>
-            <a/>
+            </a>
           </div>
           <div class="card-content">
             <p class="title is-5">Helldive.gg</p>
@@ -75,7 +75,7 @@ import '../App.css'
             <figure class="image is-4by3">
               <img
                 class="project-image"
-                src="/images/pdfsig.png"
+                src={base + "images/pdfsig.png"}
                 alt="Project 3 Screenshot"
               />
             </figure>
@@ -102,20 +102,26 @@ import '../App.css'
 
 <style>
   .projects {
-    background-color: #353d46;
-    padding: 4rem 1rem;
+    background-color: var(--bg);
+    padding: 4.5rem 1rem;
   }
+
   .card {
-    border-radius: 10px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: transform 0.2s ease;
+    transition: transform var(--transition), box-shadow var(--transition),
+      border-color var(--transition);
   }
+
   .card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
   }
+
   .project-image {
     object-fit: cover;
   }
-
-
 </style>

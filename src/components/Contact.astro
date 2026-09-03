@@ -10,6 +10,8 @@
       action='https://formspree.io/f/mrboapnv'
       method='post'
     >
+      <input type='hidden' name='_subject' value='Portfolio Contact' />
+
       <!-- Name -->
       <div class='field'>
         <label class='label'>Name</label>
@@ -65,6 +67,48 @@
 </section>
 
 <style>
-  .contact { padding: 4rem 1rem; } .box { max-width: 600px; margin: 0 auto;
-  border-radius: 12px; }
+  .contact {
+    padding: 4.5rem 1rem;
+    background-color: var(--bg-elevated);
+  }
+
+  .box {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .box .label {
+    color: var(--text);
+  }
+
+  .input,
+  .textarea {
+    background-color: var(--bg);
+    border-color: var(--border);
+    color: var(--text);
+    border-radius: 0.5rem;
+  }
+
+  .input::placeholder,
+  .textarea::placeholder {
+    color: var(--text-muted);
+  }
+
+  .button.is-primary {
+    background: var(--primary-grad);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .button.is-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
 </style>
