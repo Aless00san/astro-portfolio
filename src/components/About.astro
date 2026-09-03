@@ -1,5 +1,4 @@
 ---
-import Carousel from "./Carousel";
 import TechCarousel from "./TechCarousel.astro";
 ---
 
@@ -9,20 +8,25 @@ import TechCarousel from "./TechCarousel.astro";
       <!-- Image Column -->
       <div class="column is-one-third">
         <figure class="image is-square">
-          <img src="/profile.png" alt="Portrait" style="border-radius: 50%; object-fit: none; object-position: -309px -166px;"  />
+          <img
+            src="/profile.png"
+            alt="Portrait"
+            style="border-radius: 50%; object-fit: none; object-position: -309px -166px;"
+          />
         </figure>
       </div>
 
       <!-- Text Column -->
       <div class="column">
         <h1 class="title is-2 mt-2">About Me</h1>
-        <p class="subtitle is-5">
+        <p class="subtitle is-6">
           As a Software-Developer, I enjoy creating powerful yet efficient
           software solutions. I am passionate about building innovative
           applications made to solve everyday problems. I opt for clean and
           maintainable code, that why I strongly believe in the power of
           open-source software. I am always on the lookout for new challenges
-          and opportunities to learn as a developer. <p class="subtitle is-5">
+          and opportunities to learn as a developer.
+          <p class="subtitle is-6">
             I have a Certificate of Higher Education in Multiplatform
             Applications Development, and I have experience in designing and
             implementing software solutions for real-world problems.
@@ -33,5 +37,5 @@ import TechCarousel from "./TechCarousel.astro";
   </div>
 </div>
 <div class="mt-4 mb-4">
-  <Carousel client:load/>
+  <TechCarousel />
 </div>
