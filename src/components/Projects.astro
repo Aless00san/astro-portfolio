@@ -2,15 +2,18 @@
 const base = import.meta.env.BASE_URL;
 ---
 
-<section class="section projects">
+<section class="section projects" id="projects">
   <div class="container">
-    <h2 class="title is-2 has-text-centered">Projects</h2>
+    <h2 class="title is-2 section-title">Projects</h2>
+    <p class="subtitle section-subtitle">
+      A few highlights from my personal and professional work.
+    </p>
     <div class="columns is-multiline mobile-rws">
       <!-- Project 1 -->
       <div class="column is-one-third">
         <div class="card">
           <div class="card-image">
-            <a href="https://gunpladb.site:5173/" target="_blank">
+            <a href="https://github.com/Aless00san/Gunpla-API" target="_blank">
               <figure class="image is-4by3">
                 <img
                   class="project-image"
@@ -23,14 +26,14 @@ const base = import.meta.env.BASE_URL;
           <div class="card-content">
             <p class="title is-5">GunplaDB</p>
             <p class="subtitle is-6">
-              A demo application featuring a complete Spring Boot backend
+              A web application featuring a complete Spring Boot backend
               implementation with authentication, role-based access control,
               RESTful APIs, and full database integration
             </p>
             <div class="tags">
-              <span class="tag is-warning">Java</span>
-              <span class="tag is-info">React</span>
-              <span class="tag is-success">SpringBoot</span>
+              <span class="tag tag-java">Java</span>
+              <span class="tag tag-react">React</span>
+              <span class="tag tag-spring">SpringBoot</span>
             </div>
           </div>
         </div>
@@ -40,7 +43,7 @@ const base = import.meta.env.BASE_URL;
       <div class="column is-one-third">
         <div class="card">
           <div class="card-image">
-            <a href="https://gg.helldive.site/" target="_blank">
+            <a href="https://github.com/Aless00san/Helldivers-Wordle" target="_blank">
             <figure class="image is-4by3">
               <img
                 class="project-image"
@@ -59,9 +62,9 @@ const base = import.meta.env.BASE_URL;
               stratagem gallery
             </p>
             <div class="tags">
-              <span class="tag is-success">Express.js</span>
-              <span class="tag is-info">React</span>
-              <span class="tag is-danger">Axios</span>
+              <span class="tag tag-express">Express.js</span>
+              <span class="tag tag-react">React</span>
+              <span class="tag tag-axios">Axios</span>
             </div>
           </div>
         </div>
@@ -89,9 +92,9 @@ const base = import.meta.env.BASE_URL;
               signing experience on any mobile device
             </p>
             <div class="tags">
-              <span class="tag is-success">Express.js</span>
-              <span class="tag is-info">React</span>
-              <span class="tag is-danger is-light">Multer</span>
+              <span class="tag tag-express">Express.js</span>
+              <span class="tag tag-react">React</span>
+              <span class="tag tag-multer">Multer</span>
             </div>
           </div>
         </div>
@@ -103,20 +106,31 @@ const base = import.meta.env.BASE_URL;
 <style>
   .projects {
     background-color: var(--bg);
-    padding: 4.5rem 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
   }
 
   .card {
     background-color: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
     transition: transform var(--transition), box-shadow var(--transition),
       border-color var(--transition);
   }
 
   .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-md);
     border-color: var(--primary);
   }
